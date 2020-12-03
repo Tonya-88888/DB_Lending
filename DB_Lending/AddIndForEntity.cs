@@ -2,29 +2,26 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace DB_Lending
 {
-    public partial class AddIndividual : Form
+    public partial class AddIndForEntity : Form
     {
         string connectionString = @"Server=(local);Database=Lending;User ID=Admin;password=111134";
         public SqlConnection connection;
         int id;
         string fio = "";
-        public AddIndividual()
+
+        public AddIndForEntity()
         {
             InitializeComponent();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void Add_Click(object sender, EventArgs e)
@@ -49,21 +46,37 @@ namespace DB_Lending
                 command.CommandText = sqlExpression;
                 command.Connection = connection;
                 //command.ExecuteScalar();
-                id = Convert.ToInt32(command.ExecuteScalar()); 
+                id = Convert.ToInt32(command.ExecuteScalar());
 
                 this.Close();
-                ShowClient shC = new ShowClient();
 
-                //shC.Load(this, null);
-                shC.Show();
+                AddEntity addEnt = new AddEntity();
 
-                //fio = ind.Secondname + ind.Firstname + ind.Patronymic;
+                fio = ind.Secondname + ind.Firstname + ind.Patronymic;
+                addEnt.GetInd(id, fio);
                 
-
-               // AddEntity addEnt = new AddEntity();
-                //addEnt.GetInd(id, fio);
+                addEnt.Show();
 
             }
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            AddEntity addEnt = new AddEntity();
+
+            addEnt.Show();         
+        }
+
+        private void AddIndForEntity_Load(object sender, EventArgs e)
+        {
+            /*this.Close();
+
+            AddEntity addEnt = new AddEntity();
+
+            addEnt.Show();*/
+
         }
     }
 }

@@ -15,3 +15,4 @@ C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.AddIndi
 C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.EditIndividual.resources
 C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.AddEntity.resources
 C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.SelectIndividual.resources
+C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.AddIndForEntity.resources

@@ -58,6 +58,12 @@
     <Compile Include="AddEntity.Designer.cs">
       <DependentUpon>AddEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddIndForEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIndForEntity.Designer.cs">
+      <DependentUpon>AddIndForEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddEntity.resx">
       <DependentUpon>AddEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIndForEntity.resx">
+      <DependentUpon>AddIndForEntity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddIndividual.resx">
       <DependentUpon>AddIndividual.cs</DependentUpon>

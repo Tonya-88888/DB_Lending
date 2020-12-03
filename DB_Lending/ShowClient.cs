@@ -99,7 +99,7 @@ namespace DB_Lending
         {
             AddIndividual addInd = new AddIndividual();
             addInd.Show();
-           // this.Hide();
+            this.Hide();
         }
 
 

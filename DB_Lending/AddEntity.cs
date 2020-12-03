@@ -32,6 +32,7 @@ namespace DB_Lending
         {           
             SelectIndividual sInd = new SelectIndividual();
             sInd.Show();
+
             this.Hide();
         }
 
@@ -45,10 +46,12 @@ namespace DB_Lending
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddIndividual aInd = new AddIndividual();
-            aInd.ShowDialog();
+            this.Hide();
 
-            //this.Hide();
+            AddIndForEntity aInd = new AddIndForEntity();
+            aInd.Show();
+
+            
         }
     }
 }
