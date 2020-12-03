@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B45F3033-034E-44AA-80BC-AA7E270B557E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DB_Lending</RootNamespace>
+    <AssemblyName>DB_Lending</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddBankLoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBankLoan.Designer.cs">
+      <DependentUpon>AddBankLoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEntity.Designer.cs">
+      <DependentUpon>AddEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIndividual.Designer.cs">
+      <DependentUpon>AddIndividual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BankLoanData.cs" />
+    <Compile Include="EditBankLoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditBankLoan.Designer.cs">
+      <DependentUpon>EditBankLoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditIndividual.Designer.cs">
+      <DependentUpon>EditIndividual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Individual.cs" />
+    <Compile Include="SelectIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectIndividual.Designer.cs">
+      <DependentUpon>SelectIndividual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowBankLoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowBankLoan.Designer.cs">
+      <DependentUpon>ShowBankLoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowClient.Designer.cs">
+      <DependentUpon>ShowClient.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddBankLoan.resx">
+      <DependentUpon>AddBankLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEntity.resx">
+      <DependentUpon>AddEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIndividual.resx">
+      <DependentUpon>AddIndividual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditBankLoan.resx">
+      <DependentUpon>EditBankLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditIndividual.resx">
+      <DependentUpon>EditIndividual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectIndividual.resx">
+      <DependentUpon>SelectIndividual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowBankLoan.resx">
+      <DependentUpon>ShowBankLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ShowClient.resx">
+      <DependentUpon>ShowClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
