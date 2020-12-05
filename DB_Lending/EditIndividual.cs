@@ -38,15 +38,7 @@ namespace DB_Lending
         }
 
         private void Edit_Click(object sender, EventArgs e)
-        {/*
-            @PKIndividual int ,
-    @Secondname nvarchar(20),
-	@Firstdname nvarchar(20),
-	@Patronymic nvarchar(20),
-	@PassSeries nvarchar(9),
-	@PassID nvarchar(17),
-	@Adress nvarchar(100),
-	@PhoneNumber nvarchar(15) */
+        {
 
             using (connection = new SqlConnection(connectionString))
             {

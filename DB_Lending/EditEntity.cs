@@ -11,73 +11,42 @@ using System.Data.SqlClient;
 
 namespace DB_Lending
 {
-    public partial class AddEntity : Form
+    public partial class EditEntity : Form
     {
-
         string connectionString = @"Server=(local);Database=Lending;User ID=Admin;password=111134";
         public SqlConnection connection;
 
-        int id;
-        string fio = "";
-        string name;
-        string addres;
-        string phoneNumber;
-
-        public static Control addEntity;
-
-        public AddEntity()
+        Entity tmp;
+        public EditEntity()
         {
             InitializeComponent();
         }
 
-        public void GetInd(int ID, string str)
+        public void SetEntity(Entity value)
         {
-            id = ID;
-            fio = str;
-
-            FIOInd.Text = fio;
+            tmp = value;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
+
             SelectIndividual sInd = new SelectIndividual();
 
             sInd.FormClosing += new FormClosingEventHandler(SelectIndividual_FormClosing);
             sInd.ShowDialog();
         }
 
-       
-
-        private void AddEntity_Load(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {     
-
-            AddIndForEntity aInd = new AddIndForEntity();
-     
-            aInd.FormClosing += new FormClosingEventHandler(AddIndForEntity_FormClosing);
-            aInd.ShowDialog();
-        }
-
         void SelectIndividual_FormClosing(object sender, FormClosingEventArgs e)
         {
             FIOInd.Text = (sender as SelectIndividual).GetText().Fio;
-            id = (sender as SelectIndividual).GetText().Id;
+            tmp.IdInd = (sender as SelectIndividual).GetText().Id;
         }
-
-
         void AddIndForEntity_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FIOInd.Text = (sender as AddIndForEntity).GetText().Fio;
-            id = (sender as AddIndForEntity).GetText().Id;
+            FIOInd.Text = (sender as SelectIndividual).GetText().Fio;
+            tmp.IdInd = (sender as SelectIndividual).GetText().Id;
         }
-
-        private void Add_Click(object sender, EventArgs e)
+        private void Edit_Click(object sender, EventArgs e)
         {
-
             if (EntityName.TextLength == 0)
             {
                 MessageBox.Show(
@@ -116,30 +85,47 @@ namespace DB_Lending
             }
             else
             {
-                name = EntityName.Text;
-                addres = AddresEn.Text;
-                phoneNumber = PhoneNumberEn.Text;
-
                 using (connection = new SqlConnection(connectionString))
                 {
+
                     connection.Open();
 
-                    String sqlExpression = String.Format("exec InsertEntity'{0}','{1}','{2}',{3}",
-                        name, addres, phoneNumber, id);
+                    tmp.Name = EntityName.Text;
+                    tmp.Addres = AddresEn.Text;
+                    tmp.PhoneNumber = PhoneNumberEn.Text;
+
+                    String sqlExpression1 = String.Format("[dbo].[UpdateEntity] {0},'{1}','{2}','{3}',{4}",
+                        tmp.Id, tmp.Name, tmp.Addres, tmp.PhoneNumber, tmp.IdInd);
+
 
                     SqlCommand command = new SqlCommand();
-                    command.CommandText = sqlExpression;
+                    command.CommandText = sqlExpression1;
                     command.Connection = connection;
-                    command.ExecuteScalar();
-
-                    this.Close();
-
-                    ShowClient shC = new ShowClient();
-
-                    shC.Show();
+                    command.ExecuteNonQuery();
+                    ShowClient sh = new ShowClient();
+                    sh.Show();
                 }
             }
+        }
+
+        private void EditEntity_Load(object sender, EventArgs e)
+        {
+            EntityName.Text = tmp.Name;
+            AddresEn.Text = tmp.Addres;
+            PhoneNumberEn.Text = tmp.PhoneNumber;
+            FIOInd.Text = tmp.Fio;
 
         }
+
+        private void AddInd_Click(object sender, EventArgs e)
+        {
+
+            AddIndForEntity sInd = new AddIndForEntity();
+
+            sInd.FormClosing += new FormClosingEventHandler(AddIndForEntity_FormClosing);
+            sInd.ShowDialog();
+        }
+
+
     }
 }

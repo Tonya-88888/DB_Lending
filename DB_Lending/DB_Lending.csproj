@@ -77,12 +77,20 @@
     <Compile Include="EditBankLoan.Designer.cs">
       <DependentUpon>EditBankLoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEntity.Designer.cs">
+      <DependentUpon>EditEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditIndividual.Designer.cs">
       <DependentUpon>EditIndividual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entity.cs" />
+    <Compile Include="Indi.cs" />
     <Compile Include="Individual.cs" />
     <Compile Include="SelectIndividual.cs">
       <SubType>Form</SubType>
@@ -118,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditBankLoan.resx">
       <DependentUpon>EditBankLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEntity.resx">
+      <DependentUpon>EditEntity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditIndividual.resx">
       <DependentUpon>EditIndividual.cs</DependentUpon>

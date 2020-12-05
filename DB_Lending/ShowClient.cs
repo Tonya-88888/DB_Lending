@@ -42,9 +42,17 @@ namespace DB_Lending
                 IndividualAdapter.Fill(Individualds);
 
                 IndividualGridView.DataSource = Individualds.Tables[0];
-                // BankLoanGrid.
-                // currValue = Currensy.SelectedValue.ToString();
-                // BankLoanGrid.Columns["id"].Visible = false;
+
+
+                EntitylAdapter = new SqlDataAdapter(sqlExpression1, connection);
+
+                Entityds = new DataSet();
+
+                EntitylAdapter.Fill(Entityds);
+
+
+                EntityGridView.DataSource = Entityds.Tables[0];
+
             }
 
         }
@@ -69,11 +77,8 @@ namespace DB_Lending
                 EntitylAdapter.Fill(Entityds);
 
 
-                //  BankLoanbs = new BindingSource(BankLoan.Tables[0], "");
                 EntityGridView.DataSource = Entityds.Tables[0];
-                // BankLoanGrid.
-                // currValue = Currensy.SelectedValue.ToString();
-                // BankLoanGrid.Columns["id"].Visible = false;
+              
             }
         }
 
@@ -148,8 +153,57 @@ namespace DB_Lending
 
         private void AddEntity_Click(object sender, EventArgs e)
         {
+            //this.Hide();
             AddEntity aEnt = new AddEntity();
             aEnt.Show();
+        }
+
+        private void EditEntity_Click(object sender, EventArgs e)
+        {
+            /*
+             *@PKEntity int ,
+	@Name nvarchar(30),
+	@Adress nvarchar(100),
+	@PhoneNumber nvarchar(15),
+	@FKIndividual int*/
+            EditEntity eEnt = new EditEntity();
+
+
+            Entity ent = new Entity();
+            ent.Id = (int)Entityds.Tables[0].Rows[EntityGridView.CurrentRow.Index]["id"];
+            ent.Name = (string)Entityds.Tables[0].Rows[EntityGridView.CurrentRow.Index]["Название"];
+            ent.Addres = (string)Entityds.Tables[0].Rows[EntityGridView.CurrentRow.Index]["Адрес"];
+            ent.PhoneNumber = (string)Entityds.Tables[0].Rows[EntityGridView.CurrentRow.Index]["Номер телефона"];
+            ent.Fio = (string)Entityds.Tables[0].Rows[EntityGridView.CurrentRow.Index]["Представитель"];
+            ent.IdInd = (int)Entityds.Tables[0].Rows[EntityGridView.CurrentRow.Index]["idInd"];
+
+            eEnt.SetEntity(ent);
+            this.Hide();
+
+            eEnt.Show();
+        }
+        
+        private void DeleteEntity_Click(object sender, EventArgs e)
+        {
+            int currId = (int)Entityds.Tables[0].Rows[EntityGridView.CurrentRow.Index]["id"];
+            using (connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                String sqlExpression = String.Format("exec DeleteEntity {0}", currId);
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = sqlExpression;
+                command.Connection = connection;
+                command.ExecuteNonQuery();
+
+                foreach (DataGridViewRow row in EntityGridView.SelectedRows)
+                {
+                    EntityGridView.Rows.Remove(row);
+                }
+
+                ShowClient_Load(this, null);
+            }
         }
     }
 }

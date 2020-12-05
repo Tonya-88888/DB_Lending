@@ -19,10 +19,15 @@ namespace DB_Lending
         SqlDataAdapter IndividualAdapter;
         DataSet Individualds = new DataSet();
         DataSet Entityds = new DataSet();
+
         String sqlExpression = "select * from [dbo].[vwIndividual]";
         String sqlExpression1 = "select * from [dbo].[vwEntity]";
+
+        Indi tmp = new Indi();
+
         string fio;
         int id;
+
         public SelectIndividual()
         {
             InitializeComponent();
@@ -55,11 +60,21 @@ namespace DB_Lending
             id = (int)Individualds.Tables[0].Rows[IdentityGridView.CurrentRow.Index]["id"];
 
             AddEntity aEnt = new AddEntity();
-            aEnt.GetInd(id, fio);
+            // aEnt.GetInd(id, fio);
 
-            aEnt.Show();
+            // aEnt.Show();
+
+
+            tmp.Id = id;
+            tmp.Fio = fio;
+
             this.Hide();
 
+        }
+
+        public Indi GetText()
+        {
+            return tmp;
         }
     }
 }

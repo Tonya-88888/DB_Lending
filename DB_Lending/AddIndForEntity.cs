@@ -18,7 +18,7 @@ namespace DB_Lending
         public SqlConnection connection;
         int id;
         string fio = "";
-
+        Indi tmp = new Indi();
         public AddIndForEntity()
         {
             InitializeComponent();
@@ -46,37 +46,36 @@ namespace DB_Lending
                 command.CommandText = sqlExpression;
                 command.Connection = connection;
                 //command.ExecuteScalar();
-                id = Convert.ToInt32(command.ExecuteScalar());
+              
 
                 this.Close();
 
                 AddEntity addEnt = new AddEntity();
 
-                fio = ind.Secondname + ind.Firstname + ind.Patronymic;
-                addEnt.GetInd(id, fio);
-                
-                addEnt.Show();
+                tmp.Id = Convert.ToInt32(command.ExecuteScalar());
+                tmp.Fio = ind.Secondname + ind.Firstname + ind.Patronymic;
 
             }
+          
         }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
 
-            AddEntity addEnt = new AddEntity();
+            //AddEntity addEnt = new AddEntity();
 
-            addEnt.Show();         
+          //  addEnt.Show();         
         }
 
         private void AddIndForEntity_Load(object sender, EventArgs e)
         {
-            /*this.Close();
 
-            AddEntity addEnt = new AddEntity();
+        }
 
-            addEnt.Show();*/
-
+        public Indi GetText()
+        {
+            return tmp;
         }
     }
 }

@@ -277,6 +277,7 @@ namespace DB_Lending
             this.EditEntity.TabIndex = 1;
             this.EditEntity.Text = "Изменить";
             this.EditEntity.UseVisualStyleBackColor = true;
+            this.EditEntity.Click += new System.EventHandler(this.EditEntity_Click);
             // 
             // DeleteEntity
             // 
@@ -288,6 +289,7 @@ namespace DB_Lending
             this.DeleteEntity.TabIndex = 2;
             this.DeleteEntity.Text = "Удалить";
             this.DeleteEntity.UseVisualStyleBackColor = true;
+            this.DeleteEntity.Click += new System.EventHandler(this.DeleteEntity_Click);
             // 
             // button4
             // 
