@@ -24,7 +24,7 @@ namespace DB_Lending
         SqlDataAdapter CurrensyAdapter;
         SqlDataAdapter RateAdapter;
 
-       // DataSet Individualds = new DataSet();
+        // DataSet Individualds = new DataSet();
         DataSet Clientds = new DataSet();
         DataSet BankLoands = new DataSet();
         DataSet Currensyds = new DataSet();
@@ -40,7 +40,7 @@ namespace DB_Lending
         String sqlExpression8;
 
 
-        List<Tuple<string, int>> guarantor = new List<Tuple<string, int>>();
+        List<int> guarantorID = new List<int>();
 
         int CurrentId;
         String currValue;
@@ -61,11 +61,11 @@ namespace DB_Lending
                 connection.Open();
 
                 EntitylAdapter = new SqlDataAdapter(sqlExpression1, connection);
-               
+
                 EntitylAdapter.Fill(Clientds, "Ent");
 
                 IndividualAdapter = new SqlDataAdapter(sqlExpression, connection);
-                
+
                 IndividualAdapter.Fill(Clientds, "Ind");
                 //
                 BankLoanAdapterInd = new SqlDataAdapter(sqlExpression2, connection);
@@ -73,14 +73,11 @@ namespace DB_Lending
                 BankLoanAdapterInd.Fill(BankLoands, "Ind");
 
                 BankLoanAdapterEnt = new SqlDataAdapter(sqlExpression3, connection);
-                
+
                 BankLoanAdapterEnt.Fill(BankLoands, "Ent");
 
                 ClientDataGrit.DataSource = Clientds.Tables["Ind"];
                 BankLoanGrid.DataSource = BankLoands.Tables["Ind"];
-
-
-
 
             }
         }
@@ -127,9 +124,11 @@ namespace DB_Lending
             Currensyds.Clear();
             RateDS.Clear();
 
-            if (Ind.Checked && BankLoanGrid.CurrentRow != null) {
+            if (Ind.Checked && BankLoanGrid.CurrentRow != null)
+            {
                 CurrentId = (int)BankLoands.Tables["Ind"].Rows[BankLoanGrid.CurrentRow.Index]["id"];
-            } else if (Ent.Checked && BankLoanGrid.CurrentRow != null)
+            }
+            else if (Ent.Checked && BankLoanGrid.CurrentRow != null)
             {
                 CurrentId = (int)BankLoands.Tables["Ent"].Rows[BankLoanGrid.CurrentRow.Index]["id"];
             }
@@ -236,10 +235,12 @@ namespace DB_Lending
             ListViewItem lvi = new ListViewItem();
             lvi.Text = fio;
 
-            listBox1.Items.Insert(0, fio);
+            if(fio != null) {
 
-
-            guarantor.Add(Tuple.Create(fio, idGuarantor));
+                GuarantorList.Items.Insert(0, fio);
+                guarantorID.Add(idGuarantor);
+            }
+ 
         }
 
         private void Add_Click(object sender, EventArgs e)
@@ -254,7 +255,8 @@ namespace DB_Lending
                 MessageBoxIcon.Information,
                 MessageBoxDefaultButton.Button1);
 
-            } else if (BankLoanGrid.SelectedRows.Count == 0)
+            }
+            else if (BankLoanGrid.SelectedRows.Count == 0)
             {
                 MessageBox.Show(
                "Не выбран кредит",
@@ -264,28 +266,34 @@ namespace DB_Lending
                MessageBoxDefaultButton.Button1);
 
             }
-            else 
+            else if (RateGrid.SelectedRows.Count == 0)
+            {
+                MessageBox.Show(
+               "Не выбрана ставка по кредиту",
+               "Сообщение",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information,
+               MessageBoxDefaultButton.Button1);
+
+            }
+            else
             {
 
                 tmp.IdBankLoan = Convert.ToInt32(BankLoanGrid.CurrentRow.Cells["id"].FormattedValue);
                 tmp.IdClient = Convert.ToInt32(ClientDataGrit.CurrentRow.Cells["id"].FormattedValue);
                 tmp.TermsLoan = Convert.ToInt32(Terms.Value);
-                tmp.SumLoan = Sum.Value; 
-                tmp.PrePenalty = Convert.ToDecimal(ClientDataGrit.CurrentRow.Cells["% за досрочное погашение"].FormattedValue);
-                tmp.DelayPenalty = Convert.ToDecimal(ClientDataGrit.CurrentRow.Cells["% за просроченный платеж"].FormattedValue);
-                tmp.RateType = ClientDataGrit.CurrentRow.Cells["Тип ставки"].FormattedValue.ToString() == "фикс" ? 0 : 1;
+                tmp.SumLoan = Sum.Value;
+                tmp.PrePenalty = Convert.ToDecimal(BankLoanGrid.CurrentRow.Cells[4].FormattedValue);
+                tmp.DelayPenalty = Convert.ToDecimal(BankLoanGrid.CurrentRow.Cells[5].FormattedValue);
                 tmp.Rate = Convert.ToDecimal(RateGrid.CurrentRow.Cells["Ставка"].FormattedValue);
                 tmp.TermsFrom = Convert.ToInt32(RateGrid.CurrentRow.Cells["Срок от"].FormattedValue);
-                tmp.TermsBefore = Convert.ToInt32(RateGrid.CurrentRow.Cells["Срок до"].FormattedValue);
-            }
-            //% за просроченный платеж
-            // тип ставки
-            //Кол-во поручителей
-            //Наличие залога
-            //Тип ставки фикс плав
-            //fk ind fk ent
+                tmp.TetrmsBefore = Convert.ToInt32(RateGrid.CurrentRow.Cells["Срок до"].FormattedValue);
+                tmp.IsPledge = ((BankLoanGrid.CurrentRow.Cells[9].FormattedValue.ToString()) == "Да" ? 1 : 0);
+                tmp.CountGuarantor = Convert.ToInt32(BankLoanGrid.CurrentRow.Cells[8].FormattedValue);
 
-          /*      if (Decimal.Parse(MaxSum.Text) <= Sum.Value || Sum.Value <= Decimal.Parse(MinSum.Text))
+            }
+
+            if (Decimal.Parse(MaxSum.Text) <= tmp.SumLoan || Sum.Value <= Decimal.Parse(MinSum.Text))
             {
                 MessageBox.Show(
                "Сумма выданного кредита должна входить в промежуток от минимальной до максимальной суммы",
@@ -293,8 +301,84 @@ namespace DB_Lending
                MessageBoxButtons.OK,
                MessageBoxIcon.Information,
                MessageBoxDefaultButton.Button1);
-            } 
-  */
+            }
+            else if (tmp.TetrmsBefore < Convert.ToInt32(Terms.Value) || Convert.ToInt32(Terms.Value) < tmp.TermsFrom)
+            {
+                MessageBox.Show(
+               "Срок кредитования должен входить в промежуток от минимального до максимального срока",
+               "Сообщение",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information,
+               MessageBoxDefaultButton.Button1);
+
+            }
+            else if (GuarantorList.Items.Count != tmp.CountGuarantor)
+            {
+                MessageBox.Show(
+               "Количество поручителей не соответствует условиям кредита",
+               "Сообщение",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information,
+               MessageBoxDefaultButton.Button1);
+
+            } else if (PledgeL.Text == "" && tmp.IsPledge == 1)
+            {
+                MessageBox.Show(
+              "Необходимо добавить поручителя",
+              "Сообщение",
+              MessageBoxButtons.OK,
+              MessageBoxIcon.Information,
+              MessageBoxDefaultButton.Button1);
+
+            }else
+            {
+
+                using (connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    int idInd = 0;
+                    int idEnt = 0;
+                    String sqlExpression = "";
+
+                    if(Ind.Checked)
+                    {
+                        idInd = tmp.IdClient;
+                        sqlExpression = String.Format("exec InsertClient null , {0}", idInd);
+                    }
+                    else if (Ent.Checked)
+                    {
+                        idEnt = tmp.IdClient; 
+                        sqlExpression = String.Format("exec InsertClient {0} , null", idEnt);
+                       
+                    }
+
+                    SqlCommand command = new SqlCommand();
+                    command.CommandText = sqlExpression;
+                    command.Connection = connection;
+                    
+                    int idClient = Convert.ToInt32(command.ExecuteScalar());
+                   /*@PKClient int,0
+@PKBankLoan int,1
+@TermsLoan int,2
+@SumLoan money,3
+@FKPledge int,4
+@PrePenalty decimal(6,3),5
+@DelayPenalty decimal (6,3),6
+@FKCurrensy int  7
+*/
+                    sqlExpression = String.Format("exec InsertClientLoan {0},{1},{2},{3},2,{4},{5},{6},{7}",
+                        idClient,tmp.IdBankLoan,tmp.TermsLoan,tmp.SumLoan,tmp.PrePenalty,tmp.DelayPenalty,Currensy.SelectedValue.ToString(),tmp.Rate);
+
+                    command.CommandText = sqlExpression;
+                    command.Connection = connection;
+
+                    int idClientLoan = Convert.ToInt32(command.ExecuteScalar());
+                    label2.Text = idClientLoan.ToString();
+                }
+
+            }
+
         }
     }
 }

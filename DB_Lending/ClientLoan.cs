@@ -34,9 +34,10 @@ namespace DB_Lending
 		decimal prePenalty;
 		decimal delayPenalty;
 		decimal rate;
-		int rateType;
 		int termsFrom;
 		int tetrmsBefore;
+		int countGuarantor;
+		int isPledge;
 
         public int IdBankLoan { get => idBankLoan; set => idBankLoan = value; }
         public int IdClient { get => idClient; set => idClient = value; }
@@ -45,8 +46,10 @@ namespace DB_Lending
         public decimal PrePenalty { get => prePenalty; set => prePenalty = value; }
         public decimal DelayPenalty { get => delayPenalty; set => delayPenalty = value; }
         public decimal Rate { get => rate; set => rate = value; }
-        public int RateType { get => rateType; set => rateType = value; }
+       
         public int TermsFrom { get => termsFrom; set => termsFrom = value; }
         public int TetrmsBefore { get => tetrmsBefore; set => tetrmsBefore = value; }
+        public int CountGuarantor { get => countGuarantor; set => countGuarantor = value; }
+        public int IsPledge { get => isPledge; set => isPledge = value; }
     }
 }

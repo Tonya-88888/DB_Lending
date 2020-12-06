@@ -46,7 +46,7 @@ namespace DB_Lending
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.Guarantor = new System.Windows.Forms.Button();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.GuarantorList = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.Pledge = new System.Windows.Forms.Button();
             this.PledgeL = new System.Windows.Forms.Label();
@@ -294,7 +294,7 @@ namespace DB_Lending
             // 
             this.tableLayoutPanel11.ColumnCount = 1;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Controls.Add(this.listBox1, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.GuarantorList, 0, 0);
             this.tableLayoutPanel11.Location = new System.Drawing.Point(86, 3);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
@@ -303,14 +303,14 @@ namespace DB_Lending
             this.tableLayoutPanel11.Size = new System.Drawing.Size(292, 98);
             this.tableLayoutPanel11.TabIndex = 8;
             // 
-            // listBox1
+            // GuarantorList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 19;
-            this.listBox1.Location = new System.Drawing.Point(3, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(286, 80);
-            this.listBox1.TabIndex = 0;
+            this.GuarantorList.FormattingEnabled = true;
+            this.GuarantorList.ItemHeight = 19;
+            this.GuarantorList.Location = new System.Drawing.Point(3, 3);
+            this.GuarantorList.Name = "GuarantorList";
+            this.GuarantorList.Size = new System.Drawing.Size(286, 80);
+            this.GuarantorList.TabIndex = 0;
             // 
             // tableLayoutPanel9
             // 
@@ -626,7 +626,7 @@ namespace DB_Lending
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label PledgeCost;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox GuarantorList;
         private System.Windows.Forms.Panel panel2;
     }
 }
