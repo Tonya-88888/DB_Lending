@@ -37,13 +37,13 @@ namespace DB_Lending
 
         void SelectIndividual_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FIOInd.Text = (sender as SelectIndividual).GetText().Fio;
-            tmp.IdInd = (sender as SelectIndividual).GetText().Id;
+            FIOInd.Text = (sender as SelectIndividual).GetText().fio;
+            tmp.IdInd = (sender as SelectIndividual).GetText().id;
         }
         void AddIndForEntity_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FIOInd.Text = (sender as SelectIndividual).GetText().Fio;
-            tmp.IdInd = (sender as SelectIndividual).GetText().Id;
+            FIOInd.Text = (sender as SelectIndividual).GetText().fio;
+            tmp.IdInd = (sender as SelectIndividual).GetText().id;
         }
         private void Edit_Click(object sender, EventArgs e)
         {

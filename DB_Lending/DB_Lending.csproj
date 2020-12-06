@@ -52,6 +52,12 @@
     <Compile Include="AddBankLoan.Designer.cs">
       <DependentUpon>AddBankLoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddClientLoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddClientLoan.Designer.cs">
+      <DependentUpon>AddClientLoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEntity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,7 +76,14 @@
     <Compile Include="AddIndividual.Designer.cs">
       <DependentUpon>AddIndividual.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPledge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPledge.Designer.cs">
+      <DependentUpon>AddPledge.cs</DependentUpon>
+    </Compile>
     <Compile Include="BankLoanData.cs" />
+    <Compile Include="ClientLoan.cs" />
     <Compile Include="EditBankLoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +111,12 @@
     <Compile Include="SelectIndividual.Designer.cs">
       <DependentUpon>SelectIndividual.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectPledge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectPledge.Designer.cs">
+      <DependentUpon>SelectPledge.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShowBankLoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +134,9 @@
     <EmbeddedResource Include="AddBankLoan.resx">
       <DependentUpon>AddBankLoan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddClientLoan.resx">
+      <DependentUpon>AddClientLoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEntity.resx">
       <DependentUpon>AddEntity.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddIndividual.resx">
       <DependentUpon>AddIndividual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPledge.resx">
+      <DependentUpon>AddPledge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditBankLoan.resx">
       <DependentUpon>EditBankLoan.cs</DependentUpon>
@@ -135,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectIndividual.resx">
       <DependentUpon>SelectIndividual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectPledge.resx">
+      <DependentUpon>SelectPledge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowBankLoan.resx">
       <DependentUpon>ShowBankLoan.cs</DependentUpon>

@@ -46,7 +46,11 @@ namespace DB_Lending
             sInd.ShowDialog();
         }
 
-       
+        void SelectIndividual_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FIOInd.Text = (sender as SelectIndividual).GetText().fio;
+            id = (sender as SelectIndividual).GetText().id;
+        }
 
         private void AddEntity_Load(object sender, EventArgs e)
         {
@@ -62,11 +66,7 @@ namespace DB_Lending
             aInd.ShowDialog();
         }
 
-        void SelectIndividual_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            FIOInd.Text = (sender as SelectIndividual).GetText().Fio;
-            id = (sender as SelectIndividual).GetText().Id;
-        }
+       
 
 
         void AddIndForEntity_FormClosing(object sender, FormClosingEventArgs e)

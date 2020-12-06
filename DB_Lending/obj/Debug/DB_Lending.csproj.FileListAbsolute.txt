@@ -17,3 +17,6 @@ C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.AddEnti
 C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.SelectIndividual.resources
 C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.AddIndForEntity.resources
 C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.EditEntity.resources
+C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.AddClientLoan.resources
+C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.AddPledge.resources
+C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.SelectPledge.resources

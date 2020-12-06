@@ -18,14 +18,13 @@ namespace DB_Lending
         SqlConnection connection;
 
         string sqlExpression = "SELECT * FROM vwBankLoan";
-        string sqlExpression1 = "SELECT * FROM BankLoan";
-        string sqlExpression2 = "exec dbo.GetLoanSum ";
+
 
         SqlDataAdapter BankLoanViewAdapter;
-        SqlDataAdapter BankLoanDataAdapter;
+
         SqlDataAdapter CurrensyAdapter;
         SqlDataAdapter RateAdapter;
-        SqlDataAdapter BLCurrensyAdapter;
+
 
         public BindingSource BankLoanbs;
         public BindingSource Currensybs;

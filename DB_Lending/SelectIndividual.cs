@@ -60,10 +60,6 @@ namespace DB_Lending
             id = (int)Individualds.Tables[0].Rows[IdentityGridView.CurrentRow.Index]["id"];
 
             AddEntity aEnt = new AddEntity();
-            // aEnt.GetInd(id, fio);
-
-            // aEnt.Show();
-
 
             tmp.Id = id;
             tmp.Fio = fio;
@@ -72,9 +68,9 @@ namespace DB_Lending
 
         }
 
-        public Indi GetText()
+        public (string fio, int id) GetText()
         {
-            return tmp;
+            return (fio,id);
         }
     }
 }

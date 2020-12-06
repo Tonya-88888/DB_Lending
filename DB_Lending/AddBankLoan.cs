@@ -88,8 +88,7 @@ namespace DB_Lending
                   "Сообщение",
                   MessageBoxButtons.OK,
                   MessageBoxIcon.Information,
-                  MessageBoxDefaultButton.Button1,
-                  MessageBoxOptions.DefaultDesktopOnly);
+                  MessageBoxDefaultButton.Button1);
             }
             else if (TypeComboBox.SelectedItem == null)
             {
@@ -98,8 +97,7 @@ namespace DB_Lending
                     "Сообщение",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
+                    MessageBoxDefaultButton.Button1);
             }
             else if (TermBefore.Value <= TermFor.Value)
             {
