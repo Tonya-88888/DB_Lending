@@ -14,7 +14,7 @@ namespace DB_Lending
     public partial class AddClientLoan : Form
     {
 
-        string connectionString = @"Server=(local);Database=Lending;User ID=Admin;password=111134";
+        string connectionString = @"Server=(local);Database=Lending;User ID=BankEmployee;password=12123be";
         SqlConnection connection;
 
         SqlDataAdapter EntitylAdapter;
@@ -34,6 +34,7 @@ namespace DB_Lending
         String sqlExpression1 = "select * from [dbo].[vwEntity]";
         String sqlExpression2 = "select * from [dbo].[vwBankLoanForInd]";
         String sqlExpression3 = "select * from [dbo].[vwBankLoanForEnt]";
+        
 
         String sqlExpression6;
         String sqlExpression5;
@@ -68,6 +69,8 @@ namespace DB_Lending
 
                 IndividualAdapter.Fill(Clientds, "Ind");
                 //
+              
+                //
                 BankLoanAdapterInd = new SqlDataAdapter(sqlExpression2, connection);
                 BankLoands = new DataSet();
                 BankLoanAdapterInd.Fill(BankLoands, "Ind");
@@ -78,6 +81,10 @@ namespace DB_Lending
 
                 ClientDataGrit.DataSource = Clientds.Tables["Ind"];
                 BankLoanGrid.DataSource = BankLoands.Tables["Ind"];
+
+
+               
+
 
             }
         }

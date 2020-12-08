@@ -82,6 +82,12 @@
     <Compile Include="AddPledge.Designer.cs">
       <DependentUpon>AddPledge.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMenu.Designer.cs">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="BankLoanData.cs" />
     <Compile Include="ClientLoan.cs" />
     <Compile Include="EditBankLoan.cs">
@@ -102,9 +108,19 @@
     <Compile Include="EditIndividual.Designer.cs">
       <DependentUpon>EditIndividual.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeMenu.Designer.cs">
+      <DependentUpon>EmployeeMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entity.cs" />
     <Compile Include="Indi.cs" />
     <Compile Include="Individual.cs" />
+    <Compile Include="LogIn.cs" />
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +165,9 @@
     <EmbeddedResource Include="AddPledge.resx">
       <DependentUpon>AddPledge.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminMenu.resx">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditBankLoan.resx">
       <DependentUpon>EditBankLoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditIndividual.resx">
       <DependentUpon>EditIndividual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectIndividual.resx">
       <DependentUpon>SelectIndividual.cs</DependentUpon>

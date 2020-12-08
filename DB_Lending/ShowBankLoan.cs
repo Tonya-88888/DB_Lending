@@ -97,44 +97,50 @@ namespace DB_Lending
            
             Currensyds.Clear();
             RateDS.Clear();
-            CurrentId = (int)BankLoan.Tables[0].Rows[BankLoanGrid.CurrentRow.Index]["id"];
-
-            using (connection = new SqlConnection(connectionString))
+            if (BankLoanGrid.CurrentRow != null)
             {
-                connection.Open();
+                CurrentId = (int)BankLoan.Tables[0].Rows[BankLoanGrid.CurrentRow.Index]["id"];
 
-                sqlExpression3 = String.Format("exec [dbo].[GetCurrensy] '{0}'", CurrentId);
-
-                CurrensyAdapter = new SqlDataAdapter(sqlExpression3, connection);
-                CurrensyAdapter.Fill(Currensyds, "Currensy");
-
-                Currensy.DataSource = Currensyds.Tables["Currensy"];
-                Currensy.DisplayMember = "Валюта";
-                Currensy.ValueMember = "id";
-
-                if ( Currensy.SelectedValue != null)
+                using (connection = new SqlConnection(connectionString))
                 {
-                    
-                   
-                    MinSumBox.DataSource = Currensyds.Tables["Currensy"];
-                    MinSumBox.DisplayMember = "Мин сумм";
-                    MinSumBox.ValueMember = "id";
+                    connection.Open();
 
-                    MaxSumBox.DataSource = Currensyds.Tables["Currensy"];
-                    MaxSumBox.DisplayMember = "Макс сумм";
-                    MaxSumBox.ValueMember = "id";
+                    sqlExpression3 = String.Format("exec [dbo].[GetCurrensy] '{0}'", CurrentId);
 
-                    currValue = Currensy.SelectedValue.ToString();
+                    CurrensyAdapter = new SqlDataAdapter(sqlExpression3, connection);
+                    CurrensyAdapter.Fill(Currensyds, "Currensy");
 
-                    sqlExpression5 = String.Format("exec [dbo].[GetRate] {0} , {1}", currValue, CurrentId);
+                    Currensy.DataSource = Currensyds.Tables["Currensy"];
+                    Currensy.DisplayMember = "Валюта";
+                    Currensy.ValueMember = "id";
 
-                    using (connection = new SqlConnection(connectionString))
+
+
+                    if (Currensy.SelectedValue != null)
                     {
-                        connection.Open();
-                        RateAdapter = new SqlDataAdapter(sqlExpression5, connection);
-                        RateAdapter.Fill(RateDS);
 
-                        RateGrid.DataSource = RateDS.Tables[0];
+
+                        MinSumBox.DataSource = Currensyds.Tables["Currensy"];
+                        MinSumBox.DisplayMember = "Мин сумм";
+                        MinSumBox.ValueMember = "id";
+
+                        MaxSumBox.DataSource = Currensyds.Tables["Currensy"];
+                        MaxSumBox.DisplayMember = "Макс сумм";
+                        MaxSumBox.ValueMember = "id";
+
+                        currValue = Currensy.SelectedValue.ToString();
+
+                        sqlExpression5 = String.Format("exec [dbo].[GetRate] {0} , {1}", currValue, CurrentId);
+
+                        using (connection = new SqlConnection(connectionString))
+                        {
+                            connection.Open();
+                            RateAdapter = new SqlDataAdapter(sqlExpression5, connection);
+                            RateAdapter.Fill(RateDS);
+
+                            RateGrid.DataSource = RateDS.Tables[0];
+                        }
+                        RateGrid.Columns["id"].Visible = false;
                     }
                 }
             }

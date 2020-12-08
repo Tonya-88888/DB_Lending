@@ -53,6 +53,11 @@ namespace DB_Lending
 
                 EntityGridView.DataSource = Entityds.Tables[0];
 
+                EntityGridView.Columns["id"].Visible = false;
+                EntityGridView.Columns["idInd"].Visible = false;
+                IndividualGridView.Columns["id"].Visible = false;
+
+
             }
 
         }

@@ -36,7 +36,6 @@ namespace DB_Lending
             this.IndividualAdd = new System.Windows.Forms.Button();
             this.EditIndividual = new System.Windows.Forms.Button();
             this.DeleteIndividual = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.ClienrControl = new System.Windows.Forms.TabControl();
             this.IndividualPage = new System.Windows.Forms.TabPage();
             this.EntityPage = new System.Windows.Forms.TabPage();
@@ -47,7 +46,6 @@ namespace DB_Lending
             this.AddEntity = new System.Windows.Forms.Button();
             this.EditEntity = new System.Windows.Forms.Button();
             this.DeleteEntity = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IndividualGridView)).BeginInit();
@@ -64,39 +62,38 @@ namespace DB_Lending
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.50574F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.49425F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.82758F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.172414F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.25806F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.74194F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(870, 372);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(956, 372);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 262F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 183F));
             this.tableLayoutPanel2.Controls.Add(this.IndividualGridView, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(763, 243);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(900, 243);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // IndividualGridView
             // 
-            this.IndividualGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.IndividualGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.IndividualGridView.Location = new System.Drawing.Point(3, 3);
             this.IndividualGridView.Name = "IndividualGridView";
             this.IndividualGridView.ReadOnly = true;
-            this.IndividualGridView.Size = new System.Drawing.Size(475, 209);
+            this.IndividualGridView.Size = new System.Drawing.Size(711, 209);
             this.IndividualGridView.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -106,8 +103,7 @@ namespace DB_Lending
             this.tableLayoutPanel6.Controls.Add(this.IndividualAdd, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.EditIndividual, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.DeleteIndividual, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.button5, 0, 3);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(504, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(720, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 4;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -153,17 +149,6 @@ namespace DB_Lending
             this.DeleteIndividual.UseVisualStyleBackColor = true;
             this.DeleteIndividual.Click += new System.EventHandler(this.DeleteIndividual_Click);
             // 
-            // button5
-            // 
-            this.button5.AutoSize = true;
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(3, 140);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 29);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // ClienrControl
             // 
             this.ClienrControl.Controls.Add(this.IndividualPage);
@@ -172,7 +157,7 @@ namespace DB_Lending
             this.ClienrControl.Location = new System.Drawing.Point(12, 12);
             this.ClienrControl.Name = "ClienrControl";
             this.ClienrControl.SelectedIndex = 0;
-            this.ClienrControl.Size = new System.Drawing.Size(909, 495);
+            this.ClienrControl.Size = new System.Drawing.Size(976, 495);
             this.ClienrControl.TabIndex = 1;
             this.ClienrControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.ClienrControl_Selected);
             // 
@@ -182,7 +167,7 @@ namespace DB_Lending
             this.IndividualPage.Location = new System.Drawing.Point(4, 24);
             this.IndividualPage.Name = "IndividualPage";
             this.IndividualPage.Padding = new System.Windows.Forms.Padding(3);
-            this.IndividualPage.Size = new System.Drawing.Size(901, 467);
+            this.IndividualPage.Size = new System.Drawing.Size(968, 467);
             this.IndividualPage.TabIndex = 0;
             this.IndividualPage.Text = "Физические лица";
             this.IndividualPage.UseVisualStyleBackColor = true;
@@ -194,7 +179,7 @@ namespace DB_Lending
             this.EntityPage.Location = new System.Drawing.Point(4, 24);
             this.EntityPage.Name = "EntityPage";
             this.EntityPage.Padding = new System.Windows.Forms.Padding(3);
-            this.EntityPage.Size = new System.Drawing.Size(901, 467);
+            this.EntityPage.Size = new System.Drawing.Size(968, 467);
             this.EntityPage.TabIndex = 1;
             this.EntityPage.Text = "Юридические лица";
             this.EntityPage.UseVisualStyleBackColor = true;
@@ -203,29 +188,29 @@ namespace DB_Lending
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.49044F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.50956F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.41395F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.58605F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.90997F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.09002F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(889, 411);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.06509F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.93491F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.01051F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.98949F));
             this.tableLayoutPanel4.Controls.Add(this.EntityGridView, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(674, 199);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(761, 268);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // EntityGridView
@@ -234,7 +219,7 @@ namespace DB_Lending
             this.EntityGridView.Location = new System.Drawing.Point(3, 3);
             this.EntityGridView.Name = "EntityGridView";
             this.EntityGridView.ReadOnly = true;
-            this.EntityGridView.Size = new System.Drawing.Size(540, 155);
+            this.EntityGridView.Size = new System.Drawing.Size(542, 198);
             this.EntityGridView.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -244,8 +229,7 @@ namespace DB_Lending
             this.tableLayoutPanel5.Controls.Add(this.AddEntity, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.EditEntity, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.DeleteEntity, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.button4, 0, 3);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(549, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(551, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -291,17 +275,6 @@ namespace DB_Lending
             this.DeleteEntity.UseVisualStyleBackColor = true;
             this.DeleteEntity.Click += new System.EventHandler(this.DeleteEntity_Click);
             // 
-            // button4
-            // 
-            this.button4.AutoSize = true;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(3, 139);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 29);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // ShowClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,7 +282,7 @@ namespace DB_Lending
             this.ClientSize = new System.Drawing.Size(1000, 511);
             this.Controls.Add(this.ClienrControl);
             this.Name = "ShowClient";
-            this.Text = "ShowClient";
+            this.Text = "Клиенты";
             this.Load += new System.EventHandler(this.ShowClient_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -341,13 +314,11 @@ namespace DB_Lending
         private System.Windows.Forms.Button IndividualAdd;
         private System.Windows.Forms.Button EditIndividual;
         private System.Windows.Forms.Button DeleteIndividual;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button AddEntity;
         private System.Windows.Forms.Button EditEntity;
         private System.Windows.Forms.Button DeleteEntity;
-        private System.Windows.Forms.Button button4;
     }
 }
