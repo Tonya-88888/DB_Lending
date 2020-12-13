@@ -45,8 +45,6 @@ namespace DB_Lending
 
         private void AddBankLoan_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
 
 
@@ -338,12 +336,6 @@ namespace DB_Lending
 
             }
 
-        }
-
-        private void AddBankLoan_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ShowBankLoan showBankLoan = new ShowBankLoan();
-            showBankLoan.Show();
         }
     }
 }

@@ -12,7 +12,7 @@ using System.Configuration;
 
 namespace DB_Lending
 {
-
+    public static class User { public static string Name; }
 
     public partial class LogIn : Form
     {
@@ -33,9 +33,10 @@ namespace DB_Lending
         {
             var connectionString = Properties.Settings.Default.connectionString;
 
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(connectionString);
-            //  builder.Password = PassTextBox.Text;
-            // builder.UserID = LoginTextBox.Text;
+            SqlConnectionStringBuilder builder =
+          new SqlConnectionStringBuilder(connectionString);
+            builder.Password = PassTextBox.Text;
+            builder.UserID = LoginTextBox.Text;
 
 
             try
@@ -46,14 +47,8 @@ namespace DB_Lending
                     SqlCommand command = new SqlCommand();
                     command.CommandText = sqlExpression10;
                     command.Connection = connection;
-                    user = command.ExecuteScalar().ToString();
-                    if (user == "Admin")
-                    {
-                        User.State = 1;
-                    }
-                    else User.State = 0;
-
-
+                     user = command.ExecuteScalar().ToString();
+                    User.Name = user;
                 }
             }
             catch
@@ -64,18 +59,15 @@ namespace DB_Lending
                MessageBoxButtons.OK,
                MessageBoxIcon.Information,
                MessageBoxDefaultButton.Button1);
+            }
+            if(user == "Admin")
+            {
 
-                // PassTextBox.Text = "";
-                // LoginTextBox.Text = "";
+            }else if(user == "BankEmployee")
+            {
 
             }
-
-            EmployeeMenu menu = new EmployeeMenu();
-            menu.Show();
-
-            this.Close();
-
-
+          
 
         }
 

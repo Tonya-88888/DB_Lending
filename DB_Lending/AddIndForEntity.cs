@@ -46,26 +46,15 @@ namespace DB_Lending
                 command.CommandText = sqlExpression;
                 command.Connection = connection;
                 //command.ExecuteScalar();
+              
 
+                this.Close();
 
-                try
-                {
-                    tmp.Id = Convert.ToInt32(command.ExecuteScalar());
-                    tmp.Fio = ind.Secondname + ind.Firstname + ind.Patronymic;
+                AddEntity addEnt = new AddEntity();
 
-                    this.Close();                  
-                }
-                catch
-                {
-                    string sdf = command.ExecuteScalar().ToString();
+                tmp.Id = Convert.ToInt32(command.ExecuteScalar());
+                tmp.Fio = ind.Secondname + ind.Firstname + ind.Patronymic;
 
-                    MessageBox.Show(
-                 sdf,
-                 "Сообщение",
-                 MessageBoxButtons.OK,
-                 MessageBoxIcon.Information,
-                 MessageBoxDefaultButton.Button1);
-                }
             }
           
         }

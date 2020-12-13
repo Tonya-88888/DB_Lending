@@ -1,4 +1,5 @@
-﻿namespace DB_Lending
+﻿
+namespace DB_Lending
 {
     partial class BankLoanShowForEmp
     {
@@ -56,21 +57,19 @@
             this.BankLoanGrid.Location = new System.Drawing.Point(3, 3);
             this.BankLoanGrid.Name = "BankLoanGrid";
             this.BankLoanGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.BankLoanGrid.Size = new System.Drawing.Size(1013, 334);
+            this.BankLoanGrid.Size = new System.Drawing.Size(877, 334);
             this.BankLoanGrid.TabIndex = 0;
-            this.BankLoanGrid.SelectionChanged += new System.EventHandler(this.BankLoanGrid_SelectionChanged);
             // 
             // Filter
             // 
             this.Filter.AutoSize = true;
             this.Filter.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Filter.Location = new System.Drawing.Point(14, 3);
+            this.Filter.Location = new System.Drawing.Point(45, 8);
             this.Filter.Name = "Filter";
             this.Filter.Size = new System.Drawing.Size(102, 29);
             this.Filter.TabIndex = 1;
             this.Filter.Text = "Фильтрация";
             this.Filter.UseVisualStyleBackColor = true;
-            this.Filter.Click += new System.EventHandler(this.Filter_Click);
             // 
             // label1
             // 
@@ -96,7 +95,6 @@
             this.Currensy.Name = "Currensy";
             this.Currensy.Size = new System.Drawing.Size(121, 27);
             this.Currensy.TabIndex = 4;
-            this.Currensy.SelectionChangeCommitted += new System.EventHandler(this.Currensy_SelectionChangeCommitted);
             // 
             // MaxSumBox
             // 
@@ -119,8 +117,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.85017F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.14983F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.21622F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.78378F));
             this.tableLayoutPanel1.Controls.Add(this.BankLoanGrid, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
@@ -129,15 +127,15 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.14428F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.85572F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1148, 478);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1102, 478);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.Filter);
-            this.panel1.Location = new System.Drawing.Point(1022, 3);
+            this.panel1.Location = new System.Drawing.Point(886, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(123, 172);
+            this.panel1.Size = new System.Drawing.Size(177, 172);
             this.panel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -209,14 +207,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 506);
+            this.ClientSize = new System.Drawing.Size(1266, 728);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
-            this.MinimumSize = new System.Drawing.Size(1188, 545);
             this.Name = "BankLoanShowForEmp";
             this.Text = "Кредиты";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BankLoanShowForEmp_FormClosing);
-            this.Load += new System.EventHandler(this.BankLoanShowForEmp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BankLoanGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RateGrid)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -248,3 +243,4 @@
         private System.Windows.Forms.Label label4;
     }
 }
+

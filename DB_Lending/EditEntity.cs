@@ -126,19 +126,6 @@ namespace DB_Lending
             sInd.ShowDialog();
         }
 
-        private void EditEntity_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ShowClient showClient = new ShowClient();
-            showClient.Show();
-        }
 
-        private void Cancel_Click(object sender, EventArgs e)
-        {
-            
-            ShowClient showClient = new ShowClient();
-            showClient.Show();
-
-            this.Close();
-        }
     }
 }

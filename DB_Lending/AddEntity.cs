@@ -66,6 +66,8 @@ namespace DB_Lending
             aInd.ShowDialog();
         }
 
+       
+
 
         void AddIndForEntity_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -138,17 +140,6 @@ namespace DB_Lending
                 }
             }
 
-        }
-
-        private void AddEntity_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ShowClient showBankLoan = new ShowClient();
-            showBankLoan.Show();
-        }
-
-        private void Cancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

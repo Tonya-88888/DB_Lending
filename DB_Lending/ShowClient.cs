@@ -31,10 +31,6 @@ namespace DB_Lending
 
         public void ShowClient_Load(object sender, EventArgs e)
         {
-
-            this.WindowState = FormWindowState.Maximized;
-
-           
             using (connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -119,52 +115,45 @@ namespace DB_Lending
 
         private void DeleteIndividual_Click(object sender, EventArgs e)
         {
-            if (IndividualGridView.CurrentRow != null)
+            int currId = (int)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["id"];
+            using (connection = new SqlConnection(connectionString))
             {
-                int currId = (int)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["id"];
-                using (connection = new SqlConnection(connectionString))
+                connection.Open();
+
+                String sqlExpression = String.Format("exec DeleteIndividual {0}", currId);
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = sqlExpression;
+                command.Connection = connection;
+                command.ExecuteNonQuery();
+
+                foreach (DataGridViewRow row in IndividualGridView.SelectedRows)
                 {
-                    connection.Open();
-
-                    String sqlExpression = String.Format("exec DeleteIndividual {0}", currId);
-
-                    SqlCommand command = new SqlCommand();
-                    command.CommandText = sqlExpression;
-                    command.Connection = connection;
-                    command.ExecuteNonQuery();
-
-                    foreach (DataGridViewRow row in IndividualGridView.SelectedRows)
-                    {
-                        IndividualGridView.Rows.Remove(row);
-                    }
-
-                    ShowClient_Load(this, null);
-
+                    IndividualGridView.Rows.Remove(row);
                 }
+
+                ShowClient_Load(this, null);
             }
         }
 
         private void EditIndividual_Click(object sender, EventArgs e)
         {
-            if (IndividualGridView.CurrentRow != null)
-            {
-                EditIndividual eInd = new EditIndividual();
+            EditIndividual eInd = new EditIndividual();
 
-                Individual ind = new Individual();
-                ind.Id = (int)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["id"];
-                ind.Secondname = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Фамилия"];
-                ind.Firstname = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Имя"];
-                ind.Patronymic = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Отчество"];
-                ind.PassSeries = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Номер паспорта"];
-                ind.PassID = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Идентификационный номер"];
-                ind.Addres = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Адрес"];
-                ind.PhoneNumber = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Номер телефона"];
+            Individual ind = new Individual();
+            ind.Id = (int)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["id"];
+            ind.Secondname = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Фамилия"];
+            ind.Firstname = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Имя"];
+            ind.Patronymic = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Отчество"];
+            ind.PassSeries = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Номер паспорта"];
+            ind.PassID = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Идентификационный номер"];
+            ind.Addres = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Адрес"];
+            ind.PhoneNumber = (string)Individualds.Tables[0].Rows[IndividualGridView.CurrentRow.Index]["Номер телефона"];
 
-                eInd.SetInd(ind);
-                this.Hide();
-
-                eInd.Show();
-            }
+            eInd.SetInd(ind);
+            this.Hide();
+            
+            eInd.Show();
         }
 
         private void AddEntity_Click(object sender, EventArgs e)
@@ -201,27 +190,24 @@ namespace DB_Lending
         
         private void DeleteEntity_Click(object sender, EventArgs e)
         {
-            if (EntityGridView.CurrentRow != null)
+            int currId = (int)Entityds.Tables[0].Rows[EntityGridView.CurrentRow.Index]["id"];
+            using (connection = new SqlConnection(connectionString))
             {
-                int currId = (int)Entityds.Tables[0].Rows[EntityGridView.CurrentRow.Index]["id"];
-                using (connection = new SqlConnection(connectionString))
+                connection.Open();
+
+                String sqlExpression = String.Format("exec DeleteEntity {0}", currId);
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = sqlExpression;
+                command.Connection = connection;
+                command.ExecuteNonQuery();
+
+                foreach (DataGridViewRow row in EntityGridView.SelectedRows)
                 {
-                    connection.Open();
-
-                    String sqlExpression = String.Format("exec DeleteEntity {0}", currId);
-
-                    SqlCommand command = new SqlCommand();
-                    command.CommandText = sqlExpression;
-                    command.Connection = connection;
-                    command.ExecuteNonQuery();
-
-                    foreach (DataGridViewRow row in EntityGridView.SelectedRows)
-                    {
-                        EntityGridView.Rows.Remove(row);
-                    }
-
-                    ShowClient_Load(this, null);
+                    EntityGridView.Rows.Remove(row);
                 }
+
+                ShowClient_Load(this, null);
             }
         }
     }

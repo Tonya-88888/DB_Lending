@@ -16,5 +16,10 @@ namespace DB_Lending
         {
             InitializeComponent();
         }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

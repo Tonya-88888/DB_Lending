@@ -223,7 +223,6 @@ namespace DB_Lending
             this.Cancel.TabIndex = 1;
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // Edit
             // 
@@ -243,7 +242,6 @@ namespace DB_Lending
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "EditEntity";
             this.Text = "EditEntity";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditEntity_FormClosing);
             this.Load += new System.EventHandler(this.EditEntity_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

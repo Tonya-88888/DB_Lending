@@ -14,7 +14,7 @@ namespace DB_Lending
 {
     public partial class ShowBankLoan : Form
     {
-        string connectionString = @"Server=(local);Database=Lending;User ID=Admin;password=111134";
+        string connectionString = @"Server=desktop-tqmvuki;Database=Lending;User ID=Admin; password=111134";
         SqlConnection connection;
 
         string sqlExpression = "SELECT * FROM vwBankLoan";
@@ -55,29 +55,20 @@ namespace DB_Lending
         }
         private void ShowBankLoan_Load(object sender, EventArgs e)
         {
-           
-            this.WindowState = FormWindowState.Maximized;
-
-            if (User.State == 0)
-            {
-                AddButton.Enabled = false;
-                EditButton.Enabled = false;
-                DaleteButton.Enabled = false;
-               
-            }
             using (connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-
-                 BankLoanViewAdapter = new SqlDataAdapter(sqlExpression, connection);
+                BankLoanViewAdapter = new SqlDataAdapter(sqlExpression, connection);
 
                 BankLoan = new DataSet();
 
                 BankLoanViewAdapter.Fill(BankLoan);
 
-                BankLoanGrid.DataSource = BankLoan.Tables[0];
 
+                //  BankLoanbs = new BindingSource(BankLoan.Tables[0], "");
+                BankLoanGrid.DataSource = BankLoan.Tables[0];
+               // BankLoanGrid.
                 currValue = Currensy.SelectedValue.ToString();
                 BankLoanGrid.Columns["id"].Visible = false;
             }
@@ -239,12 +230,6 @@ namespace DB_Lending
 
             eBL.Show();
             this.Hide();           
-        }
-
-        private void ShowBankLoan_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            EmployeeMenu employeeMenu = new EmployeeMenu();
-            employeeMenu.Show();
         }
     }
 }

@@ -38,8 +38,8 @@ namespace DB_Lending
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Add = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
+            this.Add = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -156,16 +156,6 @@ namespace DB_Lending
             this.panel1.Size = new System.Drawing.Size(209, 62);
             this.panel1.TabIndex = 1;
             // 
-            // Add
-            // 
-            this.Add.AutoSize = true;
-            this.Add.Location = new System.Drawing.Point(32, 13);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(84, 29);
-            this.Add.TabIndex = 0;
-            this.Add.Text = "Добавить";
-            this.Add.UseVisualStyleBackColor = true;
-            // 
             // Cancel
             // 
             this.Cancel.AutoSize = true;
@@ -175,6 +165,17 @@ namespace DB_Lending
             this.Cancel.TabIndex = 1;
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
+            // 
+            // Add
+            // 
+            this.Add.AutoSize = true;
+            this.Add.Location = new System.Drawing.Point(32, 13);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(84, 29);
+            this.Add.TabIndex = 0;
+            this.Add.Text = "Добавить";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // AddPledge
             // 
