@@ -985,6 +985,7 @@ namespace DB_Lending
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "AddBankLoan";
             this.Text = "AddBankLoan";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddBankLoan_FormClosing);
             this.Load += new System.EventHandler(this.AddBankLoan_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

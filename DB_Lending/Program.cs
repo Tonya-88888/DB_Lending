@@ -17,7 +17,8 @@ namespace DB_Lending
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ShowBankLoan());
+            Application.Run(new AddIndividual());
+           
 
         }
     }

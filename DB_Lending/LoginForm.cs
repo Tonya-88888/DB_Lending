@@ -8,25 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Configuration;
 
 namespace DB_Lending
 {
-
-
-    public partial class LogIn : Form
+    public static class User { public static int State; }
+    public partial class LoginForm : Form
     {
         public SqlConnection connection;
         String sqlExpression10 = "SELECT ORIGINAL_LOGIN()";
         string user;
-        public LogIn()
+
+        public LoginForm()
         {
             InitializeComponent();
         }
 
-        private void Cancel_Click(object sender, EventArgs e)
+        private void LoginForm_Load(object sender, EventArgs e)
         {
-            this.Close();
+            this.CenterToScreen();
         }
 
         private void Enter_Click(object sender, EventArgs e)
@@ -34,8 +33,8 @@ namespace DB_Lending
             var connectionString = Properties.Settings.Default.connectionString;
 
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(connectionString);
-            //  builder.Password = PassTextBox.Text;
-            // builder.UserID = LoginTextBox.Text;
+              builder.Password = Password.Text;
+              builder.UserID = Login.Text;
 
 
             try
@@ -53,7 +52,10 @@ namespace DB_Lending
                     }
                     else User.State = 0;
 
+                    EmployeeMenu menu = new EmployeeMenu();
+                    menu.Show();
 
+                    this.Hide();
                 }
             }
             catch
@@ -70,18 +72,13 @@ namespace DB_Lending
 
             }
 
-            EmployeeMenu menu = new EmployeeMenu();
-            menu.Show();
-
-            this.Close();
-
 
 
         }
 
-        private void LogIn_Load(object sender, EventArgs e)
+        private void Cancel_Click(object sender, EventArgs e)
         {
-            this.CenterToScreen();
+            this.Close();
         }
     }
 }

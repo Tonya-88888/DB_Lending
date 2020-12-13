@@ -25,13 +25,23 @@ namespace DB_Lending.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("@\"Server=(local);Database=Lending;User ID=Admin;password=111134\"")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=(local);Database=Lending")]
         public string connectionString {
             get {
                 return ((string)(this["connectionString"]));
             }
             set {
                 this["connectionString"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=Lending;Integrated Security=True")]
+        public string LendingConnectionString {
+            get {
+                return ((string)(this["LendingConnectionString"]));
             }
         }
     }

@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FastReport, Version=2021.1.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c" />
+    <Reference Include="FastReport.Bars, Version=2021.1.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c" />
+    <Reference Include="FastReport.Compat, Version=2020.3.2.0, Culture=neutral, PublicKeyToken=406e1f4c3c8ef97e" />
+    <Reference Include="FastReport.DataVisualization, Version=2020.3.1.0, Culture=neutral, PublicKeyToken=5ceb240df42bf6e8" />
+    <Reference Include="FastReport.Editor, Version=2021.1.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -89,6 +95,12 @@
       <DependentUpon>AdminMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="BankLoanData.cs" />
+    <Compile Include="BankLoanShowForEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BankLoanShowForEmp.Designer.cs">
+      <DependentUpon>BankLoanShowForEmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientLoan.cs" />
     <Compile Include="EditBankLoan.cs">
       <SubType>Form</SubType>
@@ -115,11 +127,34 @@
       <DependentUpon>EmployeeMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity.cs" />
+    <Compile Include="FilterForBankLoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilterForBankLoan.Designer.cs">
+      <DependentUpon>FilterForBankLoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Indi.cs" />
     <Compile Include="Individual.cs" />
-    <Compile Include="LogIn.cs" />
+    <Compile Include="LendingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LendingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs" />
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
     <Compile Include="SelectIndividual.cs">
       <SubType>Form</SubType>
@@ -168,6 +203,9 @@
     <EmbeddedResource Include="AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BankLoanShowForEmp.resx">
+      <DependentUpon>BankLoanShowForEmp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditBankLoan.resx">
       <DependentUpon>EditBankLoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,8 +215,20 @@
     <EmbeddedResource Include="EditIndividual.resx">
       <DependentUpon>EditIndividual.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeMenu.resx">
+      <DependentUpon>EmployeeMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilterForBankLoan.resx">
+      <DependentUpon>FilterForBankLoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectIndividual.resx">
       <DependentUpon>SelectIndividual.cs</DependentUpon>
@@ -201,6 +251,17 @@
     <EmbeddedResource Include="ShowClient.resx">
       <DependentUpon>ShowClient.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="LendingDataSet.xsc">
+      <DependentUpon>LendingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LendingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LendingDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LendingDataSet.xss">
+      <DependentUpon>LendingDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

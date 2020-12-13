@@ -48,22 +48,47 @@ namespace DB_Lending
                 SqlCommand command = new SqlCommand();
                 command.CommandText = sqlExpression;
                 command.Connection = connection;
-                //command.ExecuteScalar();
-                id = Convert.ToInt32(command.ExecuteScalar()); 
+               
+                try
+                {
+                    id = Convert.ToInt32(command.ExecuteScalar());
 
-                this.Close();
-                ShowClient shC = new ShowClient();
+                    this.Close();
+                    ShowClient shC = new ShowClient();
 
-                //shC.Load(this, null);
-                shC.Show();
+             
+                    shC.Show();
 
-                //fio = ind.Secondname + ind.Firstname + ind.Patronymic;
-                
+                }
+                catch
+                {
+                    string sdf = command.ExecuteScalar().ToString();
 
-               // AddEntity addEnt = new AddEntity();
-                //addEnt.GetInd(id, fio);
-
+                    MessageBox.Show(
+                 sdf,
+                 "Сообщение",
+                 MessageBoxButtons.OK,
+                 MessageBoxIcon.Information,
+                 MessageBoxDefaultButton.Button1);
+                }
+              
             }
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            ShowClient showClient = new ShowClient();
+            showClient.Show();
+
+            this.Close();
+        }
+
+        private void AddIndividual_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ShowClient showClient = new ShowClient();
+            showClient.Show();
+
+            
         }
     }
 }

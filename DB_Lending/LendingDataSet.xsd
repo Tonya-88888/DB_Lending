@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LendingDataSet" targetNamespace="http://tempuri.org/LendingDataSet.xsd" xmlns:mstns="http://tempuri.org/LendingDataSet.xsd" xmlns="http://tempuri.org/LendingDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LendingConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LendingConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DB_Lending.Properties.Settings.GlobalReference.Default.LendingConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwBankLOanTableAdapter" GeneratorDataComponentClassName="vwBankLOanTableAdapter" Name="vwBankLOan" UserDataComponentName="vwBankLOanTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LendingConnectionString (Settings)" DbObjectName="Lending.dbo.vwBankLOan" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, Название, Тип, Принадлежность, [Тип ставки], [% за досрочное погашение], [% за просроченный платеж], [Срок от], [Срок до], [Кол-во поручителей], [Наличие залога] FROM dbo.vwBankLOan</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+              <Mapping SourceColumn="Тип" DataSetColumn="Тип" />
+              <Mapping SourceColumn="Принадлежность" DataSetColumn="Принадлежность" />
+              <Mapping SourceColumn="Тип ставки" DataSetColumn="Тип ставки" />
+              <Mapping SourceColumn="% за досрочное погашение" DataSetColumn="% за досрочное погашение" />
+              <Mapping SourceColumn="% за просроченный платеж" DataSetColumn="% за просроченный платеж" />
+              <Mapping SourceColumn="Срок от" DataSetColumn="Срок от" />
+              <Mapping SourceColumn="Срок до" DataSetColumn="Срок до" />
+              <Mapping SourceColumn="Кол-во поручителей" DataSetColumn="Кол-во поручителей" />
+              <Mapping SourceColumn="Наличие залога" DataSetColumn="Наличие залога" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwCurrensyReportTableAdapter" GeneratorDataComponentClassName="vwCurrensyReportTableAdapter" Name="vwCurrensyReport" UserDataComponentName="vwCurrensyReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LendingConnectionString (Settings)" DbObjectName="Lending.dbo.vwCurrensyReport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Год, Валюта, Сумма FROM dbo.vwCurrensyReport</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Год" DataSetColumn="Год" />
+              <Mapping SourceColumn="Валюта" DataSetColumn="Валюта" />
+              <Mapping SourceColumn="Сумма" DataSetColumn="Сумма" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwIssuanceCountTableAdapter" GeneratorDataComponentClassName="vwIssuanceCountTableAdapter" Name="vwIssuanceCount" UserDataComponentName="vwIssuanceCountTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LendingConnectionString (Settings)" DbObjectName="Lending.dbo.vwIssuanceCount" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Название, [кол-во] FROM dbo.vwIssuanceCount</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+              <Mapping SourceColumn="кол-во" DataSetColumn="кол-во" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LendingDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="LendingDataSet" msprop:Generator_UserDSName="LendingDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vwBankLOan" msprop:Generator_TableClassName="vwBankLOanDataTable" msprop:Generator_TableVarName="tablevwBankLOan" msprop:Generator_TablePropName="vwBankLOan" msprop:Generator_RowDeletingName="vwBankLOanRowDeleting" msprop:Generator_RowChangingName="vwBankLOanRowChanging" msprop:Generator_RowEvHandlerName="vwBankLOanRowChangeEventHandler" msprop:Generator_RowDeletedName="vwBankLOanRowDeleted" msprop:Generator_UserTableName="vwBankLOan" msprop:Generator_RowChangedName="vwBankLOanRowChanged" msprop:Generator_RowEvArgName="vwBankLOanRowChangeEvent" msprop:Generator_RowClassName="vwBankLOanRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Тип" msprop:Generator_ColumnVarNameInTable="columnТип" msprop:Generator_ColumnPropNameInRow="Тип" msprop:Generator_ColumnPropNameInTable="ТипColumn" msprop:Generator_UserColumnName="Тип" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Принадлежность" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnПринадлежность" msprop:Generator_ColumnPropNameInRow="Принадлежность" msprop:Generator_ColumnPropNameInTable="ПринадлежностьColumn" msprop:Generator_UserColumnName="Принадлежность" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Тип_x0020_ставки" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnТип_ставки" msprop:Generator_ColumnPropNameInRow="Тип_ставки" msprop:Generator_ColumnPropNameInTable="Тип_ставкиColumn" msprop:Generator_UserColumnName="Тип ставки" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="_x0025__x0020_за_x0020_досрочное_x0020_погашение" msprop:Generator_ColumnVarNameInTable="_column__за_досрочное_погашение" msprop:Generator_ColumnPropNameInRow="___за_досрочное_погашение" msprop:Generator_ColumnPropNameInTable="___за_досрочное_погашениеColumn" msprop:Generator_UserColumnName="% за досрочное погашение" type="xs:decimal" />
+              <xs:element name="_x0025__x0020_за_x0020_просроченный_x0020_платеж" msprop:Generator_ColumnVarNameInTable="_column__за_просроченный_платеж" msprop:Generator_ColumnPropNameInRow="___за_просроченный_платеж" msprop:Generator_ColumnPropNameInTable="___за_просроченный_платежColumn" msprop:Generator_UserColumnName="% за просроченный платеж" type="xs:decimal" />
+              <xs:element name="Срок_x0020_от" msprop:Generator_ColumnVarNameInTable="columnСрок_от" msprop:Generator_ColumnPropNameInRow="Срок_от" msprop:Generator_ColumnPropNameInTable="Срок_отColumn" msprop:Generator_UserColumnName="Срок от" type="xs:int" />
+              <xs:element name="Срок_x0020_до" msprop:Generator_ColumnVarNameInTable="columnСрок_до" msprop:Generator_ColumnPropNameInRow="Срок_до" msprop:Generator_ColumnPropNameInTable="Срок_доColumn" msprop:Generator_UserColumnName="Срок до" type="xs:int" />
+              <xs:element name="Кол-во_x0020_поручителей" msprop:Generator_ColumnVarNameInTable="_columnКол_во_поручителей" msprop:Generator_ColumnPropNameInRow="_Кол_во_поручителей" msprop:Generator_ColumnPropNameInTable="_Кол_во_поручителейColumn" msprop:Generator_UserColumnName="Кол-во поручителей" type="xs:int" minOccurs="0" />
+              <xs:element name="Наличие_x0020_залога" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnНаличие_залога" msprop:Generator_ColumnPropNameInRow="Наличие_залога" msprop:Generator_ColumnPropNameInTable="Наличие_залогаColumn" msprop:Generator_UserColumnName="Наличие залога" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vwCurrensyReport" msprop:Generator_TableClassName="vwCurrensyReportDataTable" msprop:Generator_TableVarName="tablevwCurrensyReport" msprop:Generator_RowChangedName="vwCurrensyReportRowChanged" msprop:Generator_TablePropName="vwCurrensyReport" msprop:Generator_RowDeletingName="vwCurrensyReportRowDeleting" msprop:Generator_RowChangingName="vwCurrensyReportRowChanging" msprop:Generator_RowEvHandlerName="vwCurrensyReportRowChangeEventHandler" msprop:Generator_RowDeletedName="vwCurrensyReportRowDeleted" msprop:Generator_RowClassName="vwCurrensyReportRow" msprop:Generator_UserTableName="vwCurrensyReport" msprop:Generator_RowEvArgName="vwCurrensyReportRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Год" msprop:Generator_ColumnVarNameInTable="columnГод" msprop:Generator_ColumnPropNameInRow="Год" msprop:Generator_ColumnPropNameInTable="ГодColumn" msprop:Generator_UserColumnName="Год" type="xs:int" minOccurs="0" />
+              <xs:element name="Валюта" msprop:Generator_ColumnVarNameInTable="columnВалюта" msprop:Generator_ColumnPropNameInRow="Валюта" msprop:Generator_ColumnPropNameInTable="ВалютаColumn" msprop:Generator_UserColumnName="Валюта">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Сумма" msprop:Generator_ColumnVarNameInTable="columnСумма" msprop:Generator_ColumnPropNameInRow="Сумма" msprop:Generator_ColumnPropNameInTable="СуммаColumn" msprop:Generator_UserColumnName="Сумма" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vwIssuanceCount" msprop:Generator_TableClassName="vwIssuanceCountDataTable" msprop:Generator_TableVarName="tablevwIssuanceCount" msprop:Generator_TablePropName="vwIssuanceCount" msprop:Generator_RowDeletingName="vwIssuanceCountRowDeleting" msprop:Generator_RowChangingName="vwIssuanceCountRowChanging" msprop:Generator_RowEvHandlerName="vwIssuanceCountRowChangeEventHandler" msprop:Generator_RowDeletedName="vwIssuanceCountRowDeleted" msprop:Generator_UserTableName="vwIssuanceCount" msprop:Generator_RowChangedName="vwIssuanceCountRowChanged" msprop:Generator_RowEvArgName="vwIssuanceCountRowChangeEvent" msprop:Generator_RowClassName="vwIssuanceCountRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="кол-во" msprop:Generator_ColumnVarNameInTable="_columnкол_во" msprop:Generator_ColumnPropNameInRow="_кол_во" msprop:Generator_ColumnPropNameInTable="_кол_воColumn" msprop:Generator_UserColumnName="кол-во" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vwBankLOan" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

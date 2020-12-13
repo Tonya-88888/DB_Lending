@@ -57,6 +57,8 @@ namespace DB_Lending
 
         private void AddClientLoan_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+
             using (connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -374,7 +376,7 @@ namespace DB_Lending
 @DelayPenalty decimal (6,3),6
 @FKCurrensy int  7
 */
-                    sqlExpression = String.Format("exec InsertClientLoan {0},{1},{2},{3},2,{4},{5},{6},{7}",
+                    sqlExpression = String.Format("exec InsertClientLoan {0},{1},{2},{3},null,{4},{5},{6},{7}",
                         idClient,tmp.IdBankLoan,tmp.TermsLoan,tmp.SumLoan,tmp.PrePenalty,tmp.DelayPenalty,Currensy.SelectedValue.ToString(),tmp.Rate);
 
                     command.CommandText = sqlExpression;
@@ -386,6 +388,21 @@ namespace DB_Lending
 
             }
 
+        }
+
+        private void DeleteGuarantor_Click(object sender, EventArgs e)
+        {
+            if (GuarantorList.SelectedIndex != -1) {
+                GuarantorList.Items.RemoveAt(GuarantorList.SelectedIndex);
+                guarantorID.RemoveAt(GuarantorList.SelectedIndex);
+            }
+            
+        }
+
+        private void AddClientLoan_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            EmployeeMenu employeeMenu = new EmployeeMenu();
+            employeeMenu.Show();
         }
     }
 }

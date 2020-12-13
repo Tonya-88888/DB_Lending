@@ -22,3 +22,8 @@ C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.AddPled
 C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.SelectPledge.resources
 C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.AdminMenu.resources
 C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.User.resources
+C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.Reports.resources
+C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.EmployeeMenu.resources
+C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.LogIn.resources
+C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.BankLoanShowForEmp.resources
+C:\Users\asTONYA\source\repos\DB_Lending\DB_Lending\obj\Debug\DB_Lending.FilterForBankLoan.resources

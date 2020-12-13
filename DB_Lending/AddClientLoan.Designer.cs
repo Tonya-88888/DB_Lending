@@ -44,9 +44,11 @@ namespace DB_Lending
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.Guarantor = new System.Windows.Forms.Button();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.GuarantorList = new System.Windows.Forms.ListBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Guarantor = new System.Windows.Forms.Button();
+            this.DeleteGuarantor = new System.Windows.Forms.Button();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.Pledge = new System.Windows.Forms.Button();
             this.PledgeL = new System.Windows.Forms.Label();
@@ -75,6 +77,7 @@ namespace DB_Lending
             ((System.ComponentModel.ISupportInitialize)(this.Terms)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -270,25 +273,14 @@ namespace DB_Lending
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.90722F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.09278F));
-            this.tableLayoutPanel8.Controls.Add(this.Guarantor, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel11, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(163, 73);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(382, 104);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(382, 106);
             this.tableLayoutPanel8.TabIndex = 8;
-            // 
-            // Guarantor
-            // 
-            this.Guarantor.AutoSize = true;
-            this.Guarantor.Location = new System.Drawing.Point(3, 3);
-            this.Guarantor.Name = "Guarantor";
-            this.Guarantor.Size = new System.Drawing.Size(77, 29);
-            this.Guarantor.TabIndex = 7;
-            this.Guarantor.Text = "Выбрать";
-            this.Guarantor.UseVisualStyleBackColor = true;
-            this.Guarantor.Click += new System.EventHandler(this.Guarantor_Click);
             // 
             // tableLayoutPanel11
             // 
@@ -311,6 +303,36 @@ namespace DB_Lending
             this.GuarantorList.Name = "GuarantorList";
             this.GuarantorList.Size = new System.Drawing.Size(286, 80);
             this.GuarantorList.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.Guarantor);
+            this.panel3.Controls.Add(this.DeleteGuarantor);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(77, 100);
+            this.panel3.TabIndex = 9;
+            // 
+            // Guarantor
+            // 
+            this.Guarantor.AutoSize = true;
+            this.Guarantor.Location = new System.Drawing.Point(1, 7);
+            this.Guarantor.Name = "Guarantor";
+            this.Guarantor.Size = new System.Drawing.Size(77, 29);
+            this.Guarantor.TabIndex = 7;
+            this.Guarantor.Text = "Выбрать";
+            this.Guarantor.UseVisualStyleBackColor = true;
+            this.Guarantor.Click += new System.EventHandler(this.Guarantor_Click);
+            // 
+            // DeleteGuarantor
+            // 
+            this.DeleteGuarantor.Location = new System.Drawing.Point(2, 47);
+            this.DeleteGuarantor.Name = "DeleteGuarantor";
+            this.DeleteGuarantor.Size = new System.Drawing.Size(77, 29);
+            this.DeleteGuarantor.TabIndex = 5;
+            this.DeleteGuarantor.Text = "Удалить";
+            this.DeleteGuarantor.UseVisualStyleBackColor = true;
+            this.DeleteGuarantor.Click += new System.EventHandler(this.DeleteGuarantor_Click);
             // 
             // tableLayoutPanel9
             // 
@@ -550,13 +572,14 @@ namespace DB_Lending
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1370, 667);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddClientLoan";
             this.Text = "AddClientLoan";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddClientLoan_FormClosing);
             this.Load += new System.EventHandler(this.AddClientLoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BankLoanGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RateGrid)).EndInit();
@@ -566,8 +589,9 @@ namespace DB_Lending
             ((System.ComponentModel.ISupportInitialize)(this.Sum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Terms)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -628,6 +652,8 @@ namespace DB_Lending
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.ListBox GuarantorList;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button DeleteGuarantor;
     }
 }
 

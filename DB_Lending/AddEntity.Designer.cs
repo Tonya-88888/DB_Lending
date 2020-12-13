@@ -39,13 +39,13 @@ namespace DB_Lending
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.EntityName = new System.Windows.Forms.TextBox();
+            this.PhoneNumberEn = new System.Windows.Forms.MaskedTextBox();
+            this.AddresEn = new System.Windows.Forms.TextBox();
+            this.FIOInd = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Cancel = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
-            this.PhoneNumberEn = new System.Windows.Forms.MaskedTextBox();
-            this.AddresEn = new System.Windows.Forms.TextBox();
-            this.FIOInd = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -165,6 +165,30 @@ namespace DB_Lending
             this.EntityName.Size = new System.Drawing.Size(250, 26);
             this.EntityName.TabIndex = 17;
             // 
+            // PhoneNumberEn
+            // 
+            this.PhoneNumberEn.Location = new System.Drawing.Point(183, 99);
+            this.PhoneNumberEn.Mask = "(375)00-000-00-00";
+            this.PhoneNumberEn.Name = "PhoneNumberEn";
+            this.PhoneNumberEn.Size = new System.Drawing.Size(250, 26);
+            this.PhoneNumberEn.TabIndex = 18;
+            // 
+            // AddresEn
+            // 
+            this.AddresEn.Location = new System.Drawing.Point(183, 52);
+            this.AddresEn.MaxLength = 100;
+            this.AddresEn.Name = "AddresEn";
+            this.AddresEn.Size = new System.Drawing.Size(250, 26);
+            this.AddresEn.TabIndex = 19;
+            // 
+            // FIOInd
+            // 
+            this.FIOInd.AutoSize = true;
+            this.FIOInd.Location = new System.Drawing.Point(183, 186);
+            this.FIOInd.Name = "FIOInd";
+            this.FIOInd.Size = new System.Drawing.Size(0, 19);
+            this.FIOInd.TabIndex = 20;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
@@ -199,6 +223,7 @@ namespace DB_Lending
             this.Cancel.TabIndex = 1;
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // Add
             // 
@@ -211,30 +236,6 @@ namespace DB_Lending
             this.Add.UseVisualStyleBackColor = true;
             this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
-            // PhoneNumberEn
-            // 
-            this.PhoneNumberEn.Location = new System.Drawing.Point(183, 99);
-            this.PhoneNumberEn.Mask = "(375)00-000-00-00";
-            this.PhoneNumberEn.Name = "PhoneNumberEn";
-            this.PhoneNumberEn.Size = new System.Drawing.Size(250, 26);
-            this.PhoneNumberEn.TabIndex = 18;
-            // 
-            // AddresEn
-            // 
-            this.AddresEn.Location = new System.Drawing.Point(183, 52);
-            this.AddresEn.MaxLength = 100;
-            this.AddresEn.Name = "AddresEn";
-            this.AddresEn.Size = new System.Drawing.Size(250, 26);
-            this.AddresEn.TabIndex = 19;
-            // 
-            // FIOInd
-            // 
-            this.FIOInd.AutoSize = true;
-            this.FIOInd.Location = new System.Drawing.Point(183, 186);
-            this.FIOInd.Name = "FIOInd";
-            this.FIOInd.Size = new System.Drawing.Size(0, 19);
-            this.FIOInd.TabIndex = 20;
-            // 
             // AddEntity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +244,7 @@ namespace DB_Lending
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "AddEntity";
             this.Text = "AddEntity";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEntity_FormClosing);
             this.Load += new System.EventHandler(this.AddEntity_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

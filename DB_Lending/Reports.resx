@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="report1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>435, 17</value>
+  </metadata>
+  <data name="report1.ReportResourceString" xml:space="preserve">
+    <value>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Report ScriptLanguage="CSharp" ReportInfo.Created="12/08/2020 10:43:30" ReportInfo.Modified="12/09/2020 10:07:44" ReportInfo.CreatorVersion="2021.1.0.0"&gt;
+  &lt;Dictionary&gt;
+    &lt;TableDataSource Name="vwBankLOan" ReferenceName="lendingDataSet1.vwBankLOan" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="Название" DataType="System.String"/&gt;
+      &lt;Column Name="Тип" DataType="System.String"/&gt;
+      &lt;Column Name="Принадлежность" DataType="System.String"/&gt;
+      &lt;Column Name="Тип ставки" DataType="System.String"/&gt;
+      &lt;Column Name="% за досрочное погашение" DataType="System.Decimal"/&gt;
+      &lt;Column Name="% за просроченный платеж" DataType="System.Decimal"/&gt;
+      &lt;Column Name="Срок от" DataType="System.Int32"/&gt;
+      &lt;Column Name="Срок до" DataType="System.Int32"/&gt;
+      &lt;Column Name="Кол-во поручителей" DataType="System.Int32"/&gt;
+      &lt;Column Name="Наличие залога" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+  &lt;/Dictionary&gt;
+  &lt;ReportPage Name="Page1" Watermark.Font="Arial, 60pt"&gt;
+    &lt;ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8"/&gt;
+    &lt;PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="47.25"&gt;
+      &lt;TextObject Name="Text1" Left="28.35" Top="18.9" Width="160.65" Height="18.9" Text="Визитка кредита" Font="Arial, 10pt, style=Italic"/&gt;
+    &lt;/PageHeaderBand&gt;
+    &lt;DataBand Name="Data1" Top="93.05" Width="718.2" Height="352.2" DataSource="vwBankLOan" KeepDetail="true"&gt;
+      &lt;TextObject Name="Text9" Left="226.8" Top="13.45" Width="340.2" Height="18.9" Text="[vwBankLOan.Название]" Font="Arial, 12pt, style=Bold"/&gt;
+      &lt;TextObject Name="Text3" Left="18.9" Top="115.95" Width="311.85" Height="18.9" Text="Ттип кредита: [vwBankLOan.Тип]" Font="Arial, 12pt"/&gt;
+      &lt;TextObject Name="Text4" Left="340.2" Top="115.95" Width="349.65" Height="75.6" Text="Срок кредитования: &amp;#13;&amp;#10;от [vwBankLOan.Срок от] месяцев&amp;#13;&amp;#10;до [vwBankLOan.Срок до] месяцев" Font="Arial, 12pt"/&gt;
+      &lt;TextObject Name="Text5" Left="18.9" Top="163.2" Width="311.85" Height="18.9" Text="Обязательный залог : [vwBankLOan.Наличие залога]" Font="Arial, 12pt"/&gt;
+      &lt;TextObject Name="Text6" Left="18.9" Top="210.45" Width="311.85" Height="18.9" Text="Количетво поручителей: [vwBankLOan.Кол-во поручителей]" Font="Arial, 12pt"/&gt;
+      &lt;TextObject Name="Text7" Left="340.2" Top="210.45" Width="359.1" Height="141.75" Text="Штраф за просроченный платеж:[vwBankLOan.% за просроченный платеж] %&amp;#13;&amp;#10;&amp;#13;&amp;#10;Штраф за досрочное погашение кредита: [vwBankLOan.% за досрочное погашение] %" Font="Arial, 12pt"/&gt;
+      &lt;TextObject Name="Text8" Left="18.9" Top="248.25" Width="311.85" Height="18.9" Text="Только для [vwBankLOan.Принадлежность] лиц" Font="Arial, 12pt"/&gt;
+      &lt;Sort&gt;
+        &lt;Sort Expression="[vwBankLOan.Кол-во поручителей]"/&gt;
+      &lt;/Sort&gt;
+    &lt;/DataBand&gt;
+    &lt;PageFooterBand Name="PageFooter1" Top="449.25" Width="718.2" Height="18.9"/&gt;
+  &lt;/ReportPage&gt;
+&lt;/Report&gt;
+</value>
+  </data>
+  <metadata name="lendingDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="report2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>159, 17</value>
+  </metadata>
+  <data name="report2.ReportResourceString" xml:space="preserve">
+    <value>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Report ScriptLanguage="CSharp" ReportInfo.Created="12/08/2020 13:07:30" ReportInfo.Modified="12/09/2020 10:06:20" ReportInfo.CreatorVersion="2021.1.0.0"&gt;
+  &lt;Dictionary&gt;
+    &lt;TableDataSource Name="vwCurrensyReport" ReferenceName="lendingDataSet1.vwCurrensyReport" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="Год" DataType="System.Int32"/&gt;
+      &lt;Column Name="Валюта" DataType="System.String"/&gt;
+      &lt;Column Name="Сумма" DataType="System.Decimal"/&gt;
+    &lt;/TableDataSource&gt;
+  &lt;/Dictionary&gt;
+  &lt;ReportPage Name="Page1" Watermark.Font="Arial, 60pt"&gt;
+    &lt;ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8"&gt;
+      &lt;TextObject Name="Text1" Left="18.9" Top="9.45" Width="160.65" Height="18.9" Text="Сводный отчет" Font="Arial, 14pt"/&gt;
+    &lt;/ReportTitleBand&gt;
+    &lt;PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35"&gt;
+      &lt;TextObject Name="Text2" Left="18.9" Top="9.45" Width="576.45" Height="18.9" Text="Сумма выданных кредитов за каждый год в определенной валюте" Font="Arial, 12pt"/&gt;
+    &lt;/PageHeaderBand&gt;
+    &lt;DataBand Name="Data1" Top="74.15" Width="718.2" Height="179.55"&gt;
+      &lt;MatrixObject Name="Matrix1" Left="103.95" Top="28.35" Width="165.51" Height="58.68" Border.Lines="All" Fill.Color="LightGreen" FixedRows="1" FixedColumns="1" DataSource="vwCurrensyReport"&gt;
+        &lt;MatrixColumns&gt;
+          &lt;Header Expression="[vwCurrensyReport.Валюта]"/&gt;
+        &lt;/MatrixColumns&gt;
+        &lt;MatrixRows&gt;
+          &lt;Header Expression="[vwCurrensyReport.Год]"/&gt;
+        &lt;/MatrixRows&gt;
+        &lt;MatrixCells&gt;
+          &lt;Cell Expression="[vwCurrensyReport.Сумма]"/&gt;
+        &lt;/MatrixCells&gt;
+        &lt;TableColumn Name="Column1" Width="49.7" AutoSize="true"/&gt;
+        &lt;TableColumn Name="Column2" Width="66.11" AutoSize="true"/&gt;
+        &lt;TableColumn Name="Column3" Width="49.7" AutoSize="true"/&gt;
+        &lt;TableRow Name="Row1" Height="19.56" AutoSize="true"&gt;
+          &lt;TableCell Name="Cell1" Border.Lines="All" Fill.Color="LimeGreen" Text="Год" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell2" Border.Lines="All" Fill.Color="LimeGreen" Text="[Валюта]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell7" Border.Lines="All" Fill.Color="LimeGreen" Text="Итого:" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/&gt;
+        &lt;/TableRow&gt;
+        &lt;TableRow Name="Row2" Height="19.56" AutoSize="true"&gt;
+          &lt;TableCell Name="Cell3" Border.Lines="All" Fill.Color="LimeGreen" Text="[Год]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell4" Border.Lines="All" Text="[Сумма]" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell8" Border.Lines="All" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/&gt;
+        &lt;/TableRow&gt;
+        &lt;TableRow Name="Row3" Height="19.56" AutoSize="true"&gt;
+          &lt;TableCell Name="Cell5" Border.Lines="All" Fill.Color="LimeGreen" Text="Итого:" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell6" Border.Lines="All" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell9" Border.Lines="All" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/&gt;
+        &lt;/TableRow&gt;
+      &lt;/MatrixObject&gt;
+    &lt;/DataBand&gt;
+    &lt;PageFooterBand Name="PageFooter1" Top="257.7" Width="718.2" Height="18.9"/&gt;
+  &lt;/ReportPage&gt;
+&lt;/Report&gt;
+</value>
+  </data>
+  <metadata name="report3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>251, 17</value>
+  </metadata>
+  <data name="report3.ReportResourceString" xml:space="preserve">
+    <value>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Report ScriptLanguage="CSharp" ReportInfo.Created="12/08/2020 13:07:33" ReportInfo.Modified="12/09/2020 10:07:44" ReportInfo.CreatorVersion="2021.1.0.0"&gt;
+  &lt;Dictionary&gt;
+    &lt;TableDataSource Name="vwIssuanceCount" ReferenceName="lendingDataSet1.vwIssuanceCount" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="Название" DataType="System.String"/&gt;
+      &lt;Column Name="кол-во" DataType="System.Int32"/&gt;
+    &lt;/TableDataSource&gt;
+  &lt;/Dictionary&gt;
+  &lt;ReportPage Name="Page1" Watermark.Font="Arial, 60pt"&gt;
+    &lt;ReportTitleBand Name="ReportTitle1" Width="718.2" Height="56.7"/&gt;
+    &lt;PageHeaderBand Name="PageHeader1" Top="60.7" Width="718.2" Height="37.8"&gt;
+      &lt;TextObject Name="Text1" Left="103.95" Width="151.2" Height="18.9" Text="Название кредита" Font="Arial, 10pt, style=Bold"/&gt;
+      &lt;TextObject Name="Text2" Left="519.75" Width="179.55" Height="18.9" Text="Количество выдач" Font="Arial, 10pt, style=Bold"/&gt;
+    &lt;/PageHeaderBand&gt;
+    &lt;DataBand Name="Data1" Top="102.5" Width="718.2" Height="75.6" Fill.Color="WhiteSmoke" DataSource="vwIssuanceCount"&gt;
+      &lt;TextObject Name="Text4" Left="103.95" Width="255.15" Height="18.9" Text="[vwIssuanceCount.Название]" Font="Arial, 10pt, style=Bold"/&gt;
+      &lt;TextObject Name="Text5" Left="519.75" Top="9.45" Width="198.45" Height="18.9" Text="[vwIssuanceCount.кол-во]" Font="Arial, 10pt, style=Bold"/&gt;
+      &lt;TextObject Name="Text6" Left="47.25" Width="56.7" Height="18.9" Text="[Row#]" AutoShrinkMinSize="1" Font="Arial, 10pt"/&gt;
+    &lt;/DataBand&gt;
+    &lt;PageFooterBand Name="PageFooter1" Top="182.1" Width="718.2" Height="18.9"/&gt;
+  &lt;/ReportPage&gt;
+&lt;/Report&gt;
+</value>
+  </data>
+  <metadata name="report4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>343, 17</value>
+  </metadata>
+  <data name="report4.ReportResourceString" xml:space="preserve">
+    <value>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Report ScriptLanguage="CSharp" ReportInfo.Created="12/08/2020 23:11:10" ReportInfo.Modified="12/09/2020 10:06:20" ReportInfo.CreatorVersion="2021.1.0.0"&gt;
+  &lt;Dictionary/&gt;
+&lt;/Report&gt;
+</value>
+  </data>
+</root>
