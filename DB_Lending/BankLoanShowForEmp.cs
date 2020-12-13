@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace DB_Lending
 {
-    public partial class AddPledge : Form
+    public partial class BankLoanShowForEmp : Form
     {
-        public AddPledge()
+        public BankLoanShowForEmp()
         {
             InitializeComponent();
-        }
-
-        private void Add_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

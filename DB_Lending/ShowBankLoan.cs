@@ -14,7 +14,7 @@ namespace DB_Lending
 {
     public partial class ShowBankLoan : Form
     {
-        string connectionString = @"Server=(local);Database=Lending;User ID=Admin;password=111134";
+        string connectionString = @"Server=desktop-tqmvuki;Database=Lending;User ID=Admin; password=111134";
         SqlConnection connection;
 
         string sqlExpression = "SELECT * FROM vwBankLoan";
